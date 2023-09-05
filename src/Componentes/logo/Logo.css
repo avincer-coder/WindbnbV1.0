@@ -1,0 +1,14 @@
+.contenedor_logo{
+    border: 5px solid greenyellow;
+    display:flex;
+    width: 200px;
+    align-items: center;
+    margin-right: auto;
+}
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid red;
+  }

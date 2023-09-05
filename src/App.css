@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  border: 2px solid red;
+}
+
+.main{
+    border: 2px solid fuchsia;
+}
+
+.footer{
+   border: 2px solid chartreuse;
+}
+
+.section_cards{
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

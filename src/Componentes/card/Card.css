@@ -1,0 +1,40 @@
+.contenedor_card{
+    border: 3px solid chartreuse;
+    width: 160px;
+}
+
+.estrella_puntaje{
+    display: flex;
+    align-items: center;
+
+}
+
+.superhost{
+    border: 3px solid black;
+}
+
+.estrella_puntaje img{
+    width: 10px;
+}
+
+.abajo_imagen{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.beds_host{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor_imagen{
+    display: flex;
+    justify-content: center;
+    width: 160px;
+    
+}
+.gatitos_asociados{
+        width: 90%;
+        height: 94px;
+}
