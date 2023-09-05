@@ -1,28 +1,22 @@
+// Zona de importaciones inicio 
 import './App.css'
 import Logo from './Componentes/logo/Logo'
 import Navegacion from './Componentes/navegacion/Navegacion'
 import Stays from './Componentes/stays/Stays'
 import Card from './Componentes/card/Card'
 import End from './Componentes/end/End'
-import Hospitalidades from '../lista/stays.json'
-
-// import NavBtn from './Componentes/navbtn/Navbtn'
+import Hospitalidades from '../lista/stays.json' // Data
+// Zona de importaciones final 
 
 function App() {
 
-  
-  console.log(Hospitalidades)
-
   return (
     <>
-      
-      {/* <NavBtn /> */}
       <header className='navegacion'>
-
         <Logo />
         <Navegacion />
-        
        </header>
+
       <main className='main'>
         <Stays />
         
@@ -36,8 +30,6 @@ function App() {
              beds={hospitalidad.beds}
              rating={hospitalidad.rating}
              superHost={hospitalidad.superHost} />
-            
-            {console.log(hospitalidad.title)}
           </li>
          ))}
         </section>
