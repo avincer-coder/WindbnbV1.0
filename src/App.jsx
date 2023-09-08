@@ -9,7 +9,7 @@ import Hospitalidades from '../lista/stays.json' // Data
 // Zona de importaciones final 
 
 function App() {
-
+  console.log(Hospitalidades.length)
   return (
     <>
       <header className='navegacion'>
@@ -18,7 +18,8 @@ function App() {
        </header>
 
       <main className='main'>
-        <Stays />
+        <Stays 
+        textoDeStays={Hospitalidades.length}/>
         
         <section className='section_cards'>
          {Hospitalidades.map((hospitalidad, index) =>(
