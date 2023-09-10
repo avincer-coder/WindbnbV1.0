@@ -1,13 +1,13 @@
 import "./Navegacion.css"
 import React, { useState } from 'react';
 import Hospitalidades from '../../../lista/stays.json' // Data
-
+import CiudadesParaNav from "../../funciones/Only-city";
 function Navegacion(){
 
   
     const [modalBoolean, setEstado] = useState(false);
-  const pruebaLi = ()=>{
-    console.log("Soy un li con onclick")
+    const BtnsFiltroCiudad = (City)=>{
+    console.log(City)
   }
   
   function cerrarModal(){
@@ -71,9 +71,11 @@ function Navegacion(){
                     <div className="modal_bottom">
                         {MostrarPaises &&
                             <ul>
-                                <li onClick={pruebaLi}>Alemania</li>
-                                <li>Berlin</li>
-                                <li>Tokyo</li>
+                                {CiudadesParaNav.map((ciudad, index) =>(
+                                  <li onClick={()=>BtnsFiltroCiudad(ciudad)} >
+                                    {ciudad}
+                                  </li>
+                                 ))}
                             </ul>
                         }
 

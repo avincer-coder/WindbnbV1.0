@@ -6,10 +6,18 @@ import Stays from './Componentes/stays/Stays'
 import Card from './Componentes/card/Card'
 import End from './Componentes/end/End'
 import Hospitalidades from '../lista/stays.json' // Data
+import PruebaUno from './funciones/Filtro-ciudades'
+import ExportarFiltroCiudades from './funciones/Filtro-ciudades'
 // Zona de importaciones final 
 
+// El primer filtro es mi array original, filtrar solo las ciudades que coincidan
+// Usar segundo filtro para los nombres de las ciudades solamente
+
 function App() {
-  console.log(Hospitalidades.length)
+  
+  const ImportacionDeFiltroCiudades = ExportarFiltroCiudades("Helsinki")
+
+  
   return (
     <>
       <header className='navegacion'>
@@ -22,7 +30,7 @@ function App() {
         textoDeStays={Hospitalidades.length}/>
         
         <section className='section_cards'>
-         {Hospitalidades.map((hospitalidad, index) =>(
+         {ImportacionDeFiltroCiudades.map((hospitalidad, index) =>(
           <li>
             <Card key={index}
              photo={hospitalidad.photo}
