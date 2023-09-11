@@ -4,7 +4,7 @@ function Logo(){
         <>
             <div className="contenedor_logo">
                 <span className="triangle"></span>
-                <p>windbnb</p>
+                <p className="windbnb">windbnb</p>
             </div>
         </>
     )

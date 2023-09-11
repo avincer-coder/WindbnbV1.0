@@ -6,40 +6,36 @@ import Stays from './Componentes/stays/Stays'
 import Card from './Componentes/card/Card'
 import End from './Componentes/end/End'
 import Hospitalidades from '../lista/stays.json' // Data
-import PruebaUno from './funciones/Filtro-ciudades'
 import ExportarFiltroCiudades from './funciones/Filtro-ciudades'
 import { useState } from 'react'
 // Zona de importaciones final 
 
-// El primer filtro es mi array original, filtrar solo las ciudades que coincidan
-// Usar segundo filtro para los nombres de las ciudades solamente
-
 function App() {
-  const [CiudadDinamica, setCiudadDinamica] = useState("Helsinki")
-  const [PeopleTotal, setPeopleTotal] = useState(1)
+  const [CiudadDinamica, setCiudadDinamica] = useState(null)
+  const [PeopleTotal, setPeopleTotal] = useState(0)
+  const [numeroDeStays, setNuemeroDeStays] = useState(Hospitalidades.length)
+  const [ListaDinamica, setListaDinamica] = useState(Hospitalidades)
   
-  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica, PeopleTotal)
-  const [numeroDeStays, setNuemeroDeStays] = useState(ListaCiudadesFiltradas.length)
+  
+
 
 
   const FuncionCiudadDinamica = (City, TotalDePeople)=>{
-      console.log(City)
-      console.log(TotalDePeople)
       setPeopleTotal(TotalDePeople)
+      setListaDinamica(ListaCiudadesFiltradas)
       setCiudadDinamica(City)
       setNuemeroDeStays(ListaCiudadesFiltradas.length)
-      console.log(ListaCiudadesFiltradas.length)
-      console.log(numeroDeStays)
-      return numeroDeStays
+      return City // Prueba
   }
-  console.log(numeroDeStays)
 
+  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica, PeopleTotal)
+  
   return (
     <>
       <header className='navegacion'>
         <Logo />
         <Navegacion 
-          pruebaNavegacion={FuncionCiudadDinamica}
+          FuncionCiudadDinamica={FuncionCiudadDinamica}
            />
        </header>
 
@@ -47,19 +43,21 @@ function App() {
         <Stays 
         textoDeStays={numeroDeStays}/>
         
-        <section className='section_cards'>
-         {ListaCiudadesFiltradas.map((hospitalidad, index) =>(
-          <li>
-            <Card key={index}
-             photo={hospitalidad.photo}
-             title={hospitalidad.title} 
-             type={hospitalidad.type}
-             beds={hospitalidad.beds}
-             rating={hospitalidad.rating}
-             superHost={hospitalidad.superHost} />
-          </li>
-         ))}
-        </section>
+        <div className='contenedor_all_cards'>
+          <section className='section_cards'>
+            {ListaDinamica.map((hospitalidad, index) =>(
+              <li className='renderisacion_cards'>
+                <Card key={index}
+                photo={hospitalidad.photo}
+                title={hospitalidad.title} 
+                type={hospitalidad.type}
+                beds={hospitalidad.beds}
+                rating={hospitalidad.rating}
+                superHost={hospitalidad.superHost} />
+              </li>
+            ))}
+          </section>
+        </div>
         
       </main>
       <footer className='footer'>

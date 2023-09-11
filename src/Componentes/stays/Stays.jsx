@@ -9,7 +9,7 @@ function Stays(props){
         <>
          <div className="contenedor_stays">
             <h2>Stays in Finlandia</h2>
-            <h3>{props.textoDeStays}+ Stays</h3> 
+            <h3>{props.textoDeStays} Stays</h3> 
             </div>
         </>
     )

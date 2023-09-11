@@ -1,23 +1,36 @@
 import "./Navegacion.css"
-import React, { useState } from 'react';
-import Hospitalidades from '../../../lista/stays.json' // Data
+import React, { useState, useEffect } from 'react';
 import CiudadesParaNav from "../../funciones/Only-city";
+
+
 function Navegacion(props){
 
-  
-    const [modalBoolean, setEstado] = useState(false);
-    
-    
-    const BtnsFiltroCiudad = (City)=>{
-    console.log(City)
-    props.pruebaNavegacion(City, TotalDePeople)
-  }
-
+  const [UsoDeCity, setUsoDeCity ] = useState("Whole")
+  const [modalBoolean, setEstado] = useState(false);
+  const [UsoDeTotalPeople, setUsoDeTotalDePeople] = useState(0);
   const [numeroDeAdultos, setNumeroDeAdultos] = useState(0)
   const [numeroDeChildren, setNumeroDeChildren] = useState(0)
+  const [MostrarPaises, setMostrarPaises] = useState(true)
+  const [MostrarGuests, setMostrarGuests] = useState(false)
 
+  useEffect(() => {
+    // Código del efecto
+    let TotalDePeople = numeroDeAdultos + numeroDeChildren
+    setUsoDeTotalDePeople(TotalDePeople)
+  }, [numeroDeAdultos, numeroDeChildren]);
+
+  // Funcion que detona el filtro
+  const BtnBuscador = ()=>{
+    props.FuncionCiudadDinamica(UsoDeCity, UsoDeTotalPeople)
+  } 
+
+  //Escoje la ciudad y guarda en variable
+  const BtnsFiltroCiudad = (City)=>{
+    setUsoDeCity(City)
+  }
+
+  // Controlar los botones de sumar o restar guests
   const PeopleBtnMenos = (People)=>{
-    console.log(People)
     if (People === "adult" && numeroDeAdultos > 0) {
       setNumeroDeAdultos(numeroDeAdultos -1)
     } else if (People === "children" && numeroDeChildren > 0){
@@ -25,15 +38,14 @@ function Navegacion(props){
     }
   }
   const PeopleBtnMas = (People)=>{
-    console.log(People)
     if (People === "adult") {
       setNumeroDeAdultos(numeroDeAdultos +1)
     } else if (People === "children"){
       setNumeroDeChildren(numeroDeChildren +1)
     }
   }
-  let TotalDePeople = numeroDeAdultos + numeroDeChildren
-  
+
+  // Seccion para cerrar y abrir modales
   function cerrarModal(){
     setEstado(false)
     console.log("si sirvoooo")
@@ -59,9 +71,8 @@ function Navegacion(props){
     setMostrarGuests(false)
     setMostrarPaises(true)
   }
+  // Finalizar 
 
-  const [MostrarPaises, setMostrarPaises] = useState(true)
-  const [MostrarGuests, setMostrarGuests] = useState(false)
   
     return(
 
@@ -85,15 +96,16 @@ function Navegacion(props){
                         <div className="modal_paises modal_general">
                             <p>Location</p>
                             <button onClick={BtnMostrarPaises} >Pais</button>
+                            <p>{UsoDeCity}</p>
                         </div>
 
                         <div className="modal_guests modal_general">
                             <p>Guests</p>
-                            <p>{TotalDePeople}</p>
+                            <p>{UsoDeTotalPeople}</p>
                             <button onClick={BtnNumeroDeGuests} >Add guest</button>
                         </div>
 
-                        <button className="modal_general">Icono de buscar</button>
+                        <button className="modal_general" onClick={BtnBuscador}>Icono de buscar</button>
                     </div>
 
                     <div className="modal_bottom">
