@@ -17,7 +17,8 @@ import { useState } from 'react'
 function App() {
   const [CiudadDinamica, setCiudadDinamica] = useState("Helsinki")
   
-  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica)
+  
+  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica, 1)
   const [numeroDeStays, setNuemeroDeStays] = useState(ListaCiudadesFiltradas.length)
 
 

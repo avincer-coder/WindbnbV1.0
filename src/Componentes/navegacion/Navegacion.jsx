@@ -12,6 +12,27 @@ function Navegacion(props){
     console.log(City)
     props.pruebaNavegacion(City)
   }
+
+  const [numeroDeAdultos, setNumeroDeAdultos] = useState(0)
+  const [numeroDeChildren, setNumeroDeChildren] = useState(0)
+
+  const PeopleBtnMenos = (People)=>{
+    console.log(People)
+    if (People === "adult" && numeroDeAdultos > 0) {
+      setNumeroDeAdultos(numeroDeAdultos -1)
+    } else if (People === "children" && numeroDeChildren > 0){
+      setNumeroDeChildren(numeroDeChildren -1)
+    }
+  }
+  const PeopleBtnMas = (People)=>{
+    console.log(People)
+    if (People === "adult") {
+      setNumeroDeAdultos(numeroDeAdultos +1)
+    } else if (People === "children"){
+      setNumeroDeChildren(numeroDeChildren +1)
+    }
+  }
+  let TotalDePeople = numeroDeAdultos + numeroDeChildren
   
   function cerrarModal(){
     setEstado(false)
@@ -68,6 +89,7 @@ function Navegacion(props){
 
                         <div className="modal_guests modal_general">
                             <p>Guests</p>
+                            <p>{TotalDePeople}</p>
                             <button onClick={BtnNumeroDeGuests} >Add guest</button>
                         </div>
 
@@ -86,11 +108,24 @@ function Navegacion(props){
                         }
 
                         {MostrarGuests &&
-                            <ul>
-                                <li>añadir</li>
-                                <li>Quitar</li>
-                                <li>Total</li>
-                            </ul>
+                            <div>
+                                <div>
+                                  <h1>Adult</h1>
+                                  <p>Age 13 or above</p>
+                                  <button onClick={()=>PeopleBtnMenos("adult")}>-</button>
+                                  <p>{numeroDeAdultos}</p>
+                                  <button onClick={()=>PeopleBtnMas("adult")}>+</button>
+                                </div>
+                                <div>
+                                  <h1>Children</h1>
+                                  <p>Age 2-12</p>
+                                  <button onClick={()=>PeopleBtnMenos("children")}>-</button>
+                                  <p>{numeroDeChildren}</p>
+                                  <button onClick={()=>PeopleBtnMas("children")}>+</button>
+                                </div>
+
+                            </div>
+                            
                         }
                     </div>
                 </div>}
