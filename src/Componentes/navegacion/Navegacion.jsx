@@ -10,7 +10,7 @@ function Navegacion(props){
     
     const BtnsFiltroCiudad = (City)=>{
     console.log(City)
-    props.pruebaNavegacion(City)
+    props.pruebaNavegacion(City, TotalDePeople)
   }
 
   const [numeroDeAdultos, setNumeroDeAdultos] = useState(0)

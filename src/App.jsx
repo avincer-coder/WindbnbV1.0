@@ -16,19 +16,21 @@ import { useState } from 'react'
 
 function App() {
   const [CiudadDinamica, setCiudadDinamica] = useState("Helsinki")
+  const [PeopleTotal, setPeopleTotal] = useState(1)
   
-  
-  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica, 1)
+  const ListaCiudadesFiltradas = ExportarFiltroCiudades(CiudadDinamica, PeopleTotal)
   const [numeroDeStays, setNuemeroDeStays] = useState(ListaCiudadesFiltradas.length)
 
 
-  const FuncionCiudadDinamica = (City)=>{
+  const FuncionCiudadDinamica = (City, TotalDePeople)=>{
       console.log(City)
+      console.log(TotalDePeople)
+      setPeopleTotal(TotalDePeople)
       setCiudadDinamica(City)
       setNuemeroDeStays(ListaCiudadesFiltradas.length)
       console.log(ListaCiudadesFiltradas.length)
       console.log(numeroDeStays)
-      return numeroDeStays 
+      return numeroDeStays
   }
   console.log(numeroDeStays)
 
@@ -37,7 +39,8 @@ function App() {
       <header className='navegacion'>
         <Logo />
         <Navegacion 
-          pruebaNavegacion={FuncionCiudadDinamica} />
+          pruebaNavegacion={FuncionCiudadDinamica}
+           />
        </header>
 
       <main className='main'>
