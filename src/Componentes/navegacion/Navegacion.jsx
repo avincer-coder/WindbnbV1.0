@@ -2,12 +2,15 @@ import "./Navegacion.css"
 import React, { useState } from 'react';
 import Hospitalidades from '../../../lista/stays.json' // Data
 import CiudadesParaNav from "../../funciones/Only-city";
-function Navegacion(){
+function Navegacion(props){
 
   
     const [modalBoolean, setEstado] = useState(false);
+    
+    
     const BtnsFiltroCiudad = (City)=>{
     console.log(City)
+    props.pruebaNavegacion(City)
   }
   
   function cerrarModal(){
@@ -40,10 +43,13 @@ function Navegacion(){
   const [MostrarGuests, setMostrarGuests] = useState(false)
   
     return(
+
             <div className="contenedor_navegacion">
                 <button onClick={abrrirModal}>Pais</button>
                 <button onClick={abrrirModalGuests}>Add guest</button>
                 <button onClick={abrrirModal}>Icono de buscar</button>
+
+                  {/* <h1>{props.pruebaNavegacion}</h1> */}
 
                 {modalBoolean && 
                 <div  className='modal'>
