@@ -12,14 +12,17 @@ function Card(prop){
                 {prop.superHost && <span className="superhost">SUPER HOST</span>}
 
                 
-                <p>{prop.type}</p>
+                <p className="apartment" >{prop.type}. {prop.beds} beds</p>
             </div>
             <div className="estrella_puntaje">
                 <img src="src/Componentes/img/estrella.png"/>
-                <p>{prop.rating}</p>
+                <p className="description">{prop.rating}</p>
             </div>
          </div>
-         <p>{prop.title}. <span>{prop.beds}</span></p>
+         <div>
+            <p className="description">{prop.title}.</p>
+         </div>
+         
         </div>
     )
 }

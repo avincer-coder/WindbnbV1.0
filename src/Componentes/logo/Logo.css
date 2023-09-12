@@ -1,9 +1,9 @@
 .contenedor_logo{
-    border: 5px solid greenyellow;
+    /* border: 5px solid greenyellow; */
     display:flex;
     width: 200px;
     align-items: center;
-    margin-right: auto;
+    margin-right: autos;
 }
 .triangle {
     width: 0;
@@ -17,4 +17,8 @@
     color: red;
     font-size: 25px;
     margin-left: 5px;
+  }
+
+  .img_logo{
+    height: 25px;
   }

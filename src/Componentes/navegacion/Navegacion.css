@@ -1,16 +1,15 @@
 .contenedor_navegacion{
-    width: 200px;
-    border: 2px solid black;
-    width: 300px;
-    display: flex;
-    justify-content: center;
+    height: 100%;
+    border: 1px solid  rgb(150, 148, 148);
+    display: flex;  
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .navegacion{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
-    align-items: center;
   }  
 
 @media (min-width: 350px) {
@@ -30,11 +29,11 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-      
+        padding: 0px 30px;
 }
 
 .modal_top{
-    padding: 0px 10px;
+    padding: 20px 30px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -43,34 +42,186 @@
 
 .modal_busqueda{
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    border-radius: 9px;
-    margin-top:40px;
-}
-
-.modal_general{
-    
-    width: 25%;
-
-    border-radius: 9px;
-    border: 1px solid black;
+    border-radius: 15px;
+    margin-top:10px;
+    border: 1px solid rgb(150, 148, 148);
+    height: 62px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .modal_bottom{
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     width: 100%;
-    margin-left:333px;
+    margin-left:150px;
 }
 
 .modal_bottom li{
-    margin: 15px 0px;
+    margin: 25px 0px;
 }
 
 .cerrar_nav{
-    font-size: 10px;
+    display: flex;
+    justify-content: end;
+    height: 40px;
+    width: 30px;
+    font-size: 24px;
     border: 0;
     background-color: white;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.cerrar_nav:hover{
+    cursor: pointer;
+}
 
+.btns_abrir_modal{
+    all: initial;
+    height: 50px;
+    /* width: 130px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btns_abrir_modal:hover{
+    cursor: pointer;
+}
+
+.btn_city{
+    width: 150px;
+}
+
+.btn_add_guests{
+    width: 120px;
+    color:  rgb(194, 194, 194);
+    border-left: 1px solid  rgb(150, 148, 148);
+    border-right: 1px solid  rgb(150, 148, 148);
+}
+.btn_buscar{
+    width: 55px;
+}
+
+.btns_para_modal{
+    all: initial;
+}
+
+.btns_para_modal:hover{
+    cursor: pointer;
+}
+
+.icon_loop{
+    color: red;
+    font-size: 15px;
+}
+
+.icon_loop_modal{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_search_dentro_modal{
+    background-color: red;
+    border: 1px solid red;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 190px;
+}
+
+.li_ciudad{
+    list-style-type: none;
+}
+
+.li_cada_city{
+    height: 40px;
+    width: 165px;
+    padding-left: 7px;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.li_cada_city:hover{
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgb(239, 239, 239);
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.icon_dot{
+    margin-right: 15px;
+}
+
+.edite_search{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.size_nav_modal{
+    width: 570px;
+    margin-left: 40px;
+}
+
+.modal_general{
+    display: flex;
+}
+
+.modal_guests{
+    border-left: 1px solid rgb(150, 148, 148);
+}
+
+.texto_search_modal{
+    margin-left: 10px;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.font_fam_btns{
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+
+.subtitle{
+    font-weight: 800;
+}
+
+.adult_children{
+    margin-top: 20px;
+    left: 45%;
+    position: absolute;
+    font-family: sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+}
+
+.operacion_suma{
+    display: flex;
+    justify-content: space-between;
+    width: 75px;
+}
+
+.btn_operacion{
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn_operacion:hover{
+    cursor: pointer;
+    background-color: rgb(226, 226, 226);
+}
+
+.number{
+    display: flex;
+    align-items: flex-end;
+}
+
+.adult{
+    margin-bottom: 50px;
+}
+
+.space{
+    margin-bottom: 10px;
+    font-size: 16px;
 }

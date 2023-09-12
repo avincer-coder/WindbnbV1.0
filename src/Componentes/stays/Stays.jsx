@@ -8,8 +8,8 @@ function Stays(props){
     return(
         <>
          <div className="contenedor_stays">
-            <h2>Stays in Finlandia</h2>
-            <h3>{props.textoDeStays} Stays</h3> 
+            <h2 className="texto_Finlandia">Stays in Finland</h2>
+            <h3 className="texto_stays">{props.textoDeStays} stays</h3> 
             </div>
         </>
     )
